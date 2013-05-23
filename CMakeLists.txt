@@ -31,17 +31,11 @@ pkg_check_modules(DEPS
  
 # Check if we have sqlheavy-0.2
 pkg_check_modules(SQLHEAVY2 sqlheavy-0.2)
-if(${SQLHEAVY2_FOUND})
-    set(ADD_PKG ${ADD_PKG} sqlheavy-0.2)
-    message("-- Will use sqlheavy-0.2")
-    set (SQLHEAVY_CFLAGS ${SQLHEAVY2_CFLAGS})
-    set (SQLHEAVY_LIBRARY_DIRS ${SQLHEAVY2_LIBRARY_DIRS})
-    set (SQLHEAVY_LIBRARIES ${SQLHEAVY2_LIBRARIES})
-else()
-    pkg_check_modules (SQLHEAVY REQUIRED sqlheavy-0.1)
-    set(ADD_PKG ${ADD_PKG} sqlheavy-0.1)
-    message("-- Will use sqlheavy-0.1")
-endif() 
+set(ADD_PKG ${ADD_PKG} sqlheavy-0.2)
+message("-- Will use sqlheavy-0.2")
+set (SQLHEAVY_CFLAGS ${SQLHEAVY2_CFLAGS})
+set (SQLHEAVY_LIBRARY_DIRS ${SQLHEAVY2_LIBRARY_DIRS})
+set (SQLHEAVY_LIBRARIES ${SQLHEAVY2_LIBRARIES})
 
 pkg_check_modules(ZEITGEIST zeitgeist-1.0)
 if(${ZEITGEIST_FOUND})

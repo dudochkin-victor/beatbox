@@ -16,7 +16,7 @@ KEYWORDS="~amd64"
 IUSE="ayatana menu nls zeitgeist"
 
 RDEPEND="
-	|| ( dev-db/sqlheavy:0.2 dev-db/sqlheavy:0.1 )
+	dev-db/sqlheavy:0.2
 	dev-libs/glib:2
 	dev-libs/json-glib
 	menu? ( >=dev-libs/libdbusmenu-0.4.3 )
